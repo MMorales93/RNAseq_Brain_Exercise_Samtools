@@ -1,0 +1,20 @@
+rule all:
+    input:
+        expand("{sample}.sorted.bam.bai", sample=config["samples"])
+ 
+ 
+rule sort_reads:
+    input:
+        bam_fin="{sample}.bam"
+    output:
+        bam_sorted="{sample}.sorted.bam"
+    shell:
+        "samtools sort {input.bam_fin} -o {output.bam_sorted}"
+ 
+rule bam_index:
+    input:
+        sorted_fin="{sample}.sorted.bam"
+    output:
+        bai="{sample}.sorted.bam.bai"
+    shell:
+        "samtools index {input.sorted_fin}"

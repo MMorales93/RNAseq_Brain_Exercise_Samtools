@@ -1,0 +1,8 @@
+samples:
+  -  brain_rep1_trimmed.genome
+  -  brain_rep2_trimmed.genome
+  -  brain_rep3_trimmed.genome
+  -  ref_rep1_trimmed.genome
+  -  ref_rep2_trimmed.genome
+  -  ref_rep3_trimmed.genome
+  
